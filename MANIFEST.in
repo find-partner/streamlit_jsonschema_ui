@@ -1,0 +1,10 @@
+recursive-include src/streamlit_jsonschema_ui/frontend/dist *
+recursive-exclude tests *
+exclude src/streamlit_jsonschema_ui/frontend/*.js
+exclude src/streamlit_jsonschema_ui/frontend/*.html
+exclude src/streamlit_jsonschema_ui/frontend/*.ts
+exclude src/streamlit_jsonschema_ui/frontend/*.json
+exclude src/streamlit_jsonschema_ui/frontend/*.md
+exclude src/streamlit_jsonschema_ui/frontend/*.mts
+exclude src/streamlit_jsonschema_ui/frontend/.*
+recursive-exclude src/streamlit_jsonschema_ui/frontend/node_modules *
