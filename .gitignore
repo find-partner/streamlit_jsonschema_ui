@@ -1,3 +1,4 @@
+src/streamlit_jsonschema_ui/_version.py
 .idea
 .vscode
 ### Linux template

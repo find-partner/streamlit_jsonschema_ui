@@ -11,7 +11,8 @@ import { fileURLToPath, URL } from 'node:url'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [
+    base: "./",
+    plugins: [
     Vue({
       template: { transformAssetUrls },
     }),
@@ -37,22 +38,6 @@ export default defineConfig({
   build: {
     commonjsOptions: {
       transformMixedEsModules: true,
-    },
-    rollupOptions: {
-      output: {
-        chunkFileNames: 'js/[name].[hash].js', // JS chunks
-        entryFileNames: 'js/[name].[hash].js', // JS entry points
-        assetFileNames: ({ name }) => {
-          if (/\.(gif|jpe?g|png|svg)$/.test(name ?? '')) {
-            return 'assets/images/[name]-[hash][extname]'; // Images
-          }
-          if (/\.css$/.test(name ?? '')) {
-            return 'css/[name]-[hash][extname]'; // CSS
-          }
-          // Default for other assets
-          return 'assets/[name]-[hash][extname]';
-        },
-      },
     },
   },
   define: { 'process.env': {} },

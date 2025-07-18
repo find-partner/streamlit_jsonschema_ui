@@ -1,6 +1,6 @@
 [project]
 name = "streamlit-jsonschema-ui"
-version = "0.1.0"
+dynamic = ["version"]
 description = "A Streamlit component for JSON Schema UI using Vue.js and Vuetify"
 readme = "README.md"
 license = "MIT"
@@ -29,16 +29,23 @@ Homepage = "https://github.com/find-partner/streamlit_jsonschema_ui"
 Repository = "https://github.com/find-partner/streamlit_jsonschema_ui"
 Issues = "https://github.com/find-partner/streamlit_jsonschema_ui/issues"
 
-[project.optional-dependencies]
+[dependency-groups]
 dev = [
+    "isort>=6.0.1",
+    "pre-commit>=4.2.0",
+    "psutil>=7.0.0",
+    "setuptools-scm>=8.3.1",
+    "watchdog>=6.0.0",
 ]
 
-[tool.black]
-line-length = 88
-target-version = ['py312']
+[build-system]
+requires = ["setuptools>=61.0.0", "wheel", "setuptools-scm>=8"]
 
-[tool.isort]
-profile = "black"
-line_length = 88
+[tool.setuptools.packages.find]
+where = ["src"]
 
+[tool.setuptools.dynamic]
+version = {attr = "streamlit_jsonschema_ui._version.version"}
 
+[tool.setuptools_scm]
+version_file = "src/streamlit_jsonschema_ui/_version.py"
